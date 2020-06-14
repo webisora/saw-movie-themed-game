@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Saw themed game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div id="game-container">
+        <img id="background" src="images/saw.jpg" alt="" />        
+       
+        <!-- Instructions. Hide after the game is started -->
+        <img id="timeToPlayAgain" class="hideAfterInit" alt="" src="images/iwtpag.png">
+        <img id="openLockInstruction" class="hideAfterInit" alt="" src="images/openLockInstructions.svg">
+        
+        <div class="hideAfterInit start" id="startArea">
+            <img src="images/whiteStripe.png" alt="" />
+            <img id="tapToStart" src="images/cts.png" alt="" />
+        </div>
+
+         <!-- Timer. Show after the game is started and hide after game is finished-->
+        <div id="timer"></div>
+        
+         <!-- Circular saw blades. Main elements of the game -->
+        <div class="blades" id="blades">
+            <img id="edge" src="images/edge.png" alt="" />
+            <img id="backing" src="images/backing.png" alt="" />
+            <img id="circle-1" src="images/circle1_s.png" alt="" />
+            <img id="circle-2" src="images/circle2_s.png" alt="" />
+            <img id="circle-3" src="images/circle3_s.png" alt="" />
+        </div>
+        
+         <!-- Show game over if the player cannot finish the game on time. Hide after the game is restarted -->
+        <div id="gameOver">
+            <img src="images/go.png" alt="" />
+            <img id="tryAgain" src="images/tryAgain.svg" alt="" />
+        </div>
+
+        <!-- Show this message when the player finishes the game on time -->
+        <img id="gameCompleted" src="images/gydi.png" alt=""/>
+    </div>
+
+    <script src="js/propeller.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

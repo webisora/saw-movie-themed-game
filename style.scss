@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+
+@keyframes fading {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+// generic transform
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+      -o-transform: $transforms;
+     -ms-transform: $transforms;
+ -webkit-transform: $transforms;
+       transform: $transforms;
+}
+
+// translate
+@mixin translate ($x, $y) {
+    @include transform(translate($x, $y));
+ }
+
+.show {
+    opacity: 1 !important;
+	transition: opacity 400ms;
+	display: block !important;
+}
+.hide {
+    opacity: 0 !important;
+	transition: opacity 400ms;
+	display: none !important;
+}
+
+body {
+	font-family: 'Press Start 2P', cursive;
+	width: 300px;
+	height: 525px;
+	margin: 0 auto;
+}
+img{
+	user-select: none;
+	-webkit-user-drag: none;
+}
+#game-container {
+	position: absolute;
+	width: 300px;
+	height: 525px;
+}
+#background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 300px;
+}
+#timeToPlayAgain {
+	position: absolute;
+	top: 15px;
+	width: 265px;
+	left: 50%;
+	@include translate(-50%, 0);
+}
+#openLockInstruction {
+	position: absolute;
+	top: 205px;
+	width: 265px;
+	left: 50%;
+	@include translate(-50%, 0);
+}
+.start {
+	position: absolute;
+	top: 445px;
+	left: 50%;
+	@include translate(-50%, 0);
+	width: 100%;
+	z-index: 99;
+	img {
+		&:first-child {
+			width: 100%;
+		}
+	}
+}
+#tapToStart {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	@include translate(-50%, -50%);
+	width: 260px;
+	cursor: pointer;
+}
+.animate-fading {
+	animation: fading 8s infinite;
+}
+#gameOver {
+	position: absolute;
+	left: 50%;
+	top: 145px;
+	@include translate(-50%, 0%);
+	width: 100%;
+	text-align: center;
+	display: none;
+	img {
+		&:first-child {
+			width: 240px;
+			margin-bottom: 5px;
+		}
+		&:nth-child(2) {
+			width: 130px;
+		}
+	}
+}
+#gameCompleted {
+	position: absolute;
+	top: 15px;
+	left: 50%;
+	@include translate(-50%, 0%);
+	width: 280px;
+	display: none;
+}
+
+#timer {
+	position: absolute;
+	top: 180px;
+	left: 50%;
+	@include translate(-50%, 0);
+	font-size: 30px;
+	color: white;
+	div {
+		display: inline-block;
+		text-align: center;
+	}
+	span {
+		text-align: center;
+		color: white;
+		font-size: 30px;
+	}
+	div.seconds {
+		text-align: center;
+	}
+	div.milliseconds {
+		text-align: center;
+	}
+}
+.blades {
+	position: absolute;
+	top: 240px;
+	img {
+		max-width: 300px;
+	}
+}
+#backing {
+	z-index: 1;
+	position: absolute;
+	pointer-events: none;
+}
+#edge {
+	z-index: 1;
+	position: absolute;
+	pointer-events: none;
+}
+#circle-1 {
+	z-index: 2;
+	border-radius: 50%;
+	position: absolute;
+	left: 26.5px;
+	top: 14.5px;
+	width: 245px;
+	cursor: pointer;
+}
+#circle-2 {
+	z-index: 3;
+	position: absolute;
+	top: 45.5px;
+	left: 56px;
+	border-radius: 50%;
+	width: 186px;
+	cursor: pointer;
+}
+#circle-3 {
+	z-index: 4;
+	position: absolute;
+	top: 74.3px;
+	left: 86.5px;
+	width: 125px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+.glow {
+	filter: drop-shadow(0px 0px 8px rgba(218,165,32, 1));
+	-webkit-filter: drop-shadow(0px 0px 8px rgba(218,165,32, 1));
+}
